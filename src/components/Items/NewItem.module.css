@@ -1,0 +1,37 @@
+.item-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #51cf66;
+  border-radius: 2rem;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.description {
+  font-size: 1.6rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.add-item-btn {
+  align-self: flex-end;
+  border: 2px solid #000;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: #37b24d;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.add-item-btn:hover {
+  cursor: pointer;
+  background-color: #2b8a3e;
+  color: #fff;
+}

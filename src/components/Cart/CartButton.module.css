@@ -1,0 +1,31 @@
+.cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: #37b24d;
+  border: 2px solid #000;
+  border-radius: 1rem;
+}
+
+.cart-btn:hover {
+  cursor: pointer;
+  background-color: #2b8a3e;
+  color: #fff;
+}
+
+.cart-btn:hover .amount {
+  background-color: #37b24d;
+}
+
+.cart-title {
+  display: block;
+}
+
+.amount {
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 3rem;
+  background-color: #2b8a3e;
+}
