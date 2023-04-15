@@ -11,8 +11,18 @@ const Cart = () => {
     <div className={classes["cart-wrap"]}>
       <h1 className={classes.title}>Shopping cart</h1>
       {items.map((item) => (
+        // <CartItem
+        //   item={{
+        //     key: item.id,
+        //     title: item.title,
+        //     price: item.price,
+        //     totalPrice: item.totalPrice,
+        //     amount: item.amount,
+        //   }}
+        // />
         <CartItem
           key={item.id}
+          id={item.id}
           title={item.title}
           price={item.price}
           totalPrice={item.totalPrice}
