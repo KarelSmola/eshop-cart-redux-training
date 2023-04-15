@@ -6,13 +6,13 @@ import classes from "./Items.module.css";
 const DATA = [
   {
     id: "p1",
-    name: "Bananas",
+    title: "Bananas",
     description: "Bio bananas from Spain",
     price: 5,
   },
   {
     id: "p2",
-    name: "Oranges",
+    title: "Oranges",
     description: "Bio oranges from Spain",
     price: 4,
   },
@@ -20,15 +20,17 @@ const DATA = [
 
 const Items = () => {
   return (
-    <div className={classes["items-wrap"]}>
+    <ul className={classes["items-wrap"]}>
       {DATA.map((item) => (
         <NewItem
-          title={item.name}
+          key={item.id}
+          id={item.id}
+          title={item.title}
           description={item.description}
           price={item.price}
         />
       ))}
-    </div>
+    </ul>
   );
 };
 

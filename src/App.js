@@ -6,7 +6,7 @@ import Cart from "./components/Cart/Cart";
 import Items from "./components/Items/Items";
 
 const App = () => {
-  const showCart = useSelector((state) => state.cartIsVisible);
+  const showCart = useSelector((state) => state.ui.cartIsVisible);
 
   return (
     <div>

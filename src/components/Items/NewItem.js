@@ -1,15 +1,34 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cart-slice";
 
 import classes from "./NewItem.module.css";
 
 const NewItem = (props) => {
+  const dispatch = useDispatch();
+
+  const { id, title, description, price } = props;
+
+  const addToCartHandler = () => {
+    dispatch(
+      cartActions.addItem({
+        id,
+        title,
+        description,
+        price,
+      })
+    );
+  };
+
   return (
-    <div className={classes["item-wrap"]}>
-      <h1 className={classes.title}>{props.title}</h1>
-      <p className={classes.description}>{props.description}</p>
-      <p className={classes.price}>$ {props.price}</p>
-      <button className={classes["add-item-btn"]}>Add</button>
-    </div>
+    <li className={classes["item-wrap"]}>
+      <h1 className={classes.title}>{title}</h1>
+      <p className={classes.description}>{description}</p>
+      <p className={classes.price}>$ {price}</p>
+      <button className={classes["add-item-btn"]} onClick={addToCartHandler}>
+        Add
+      </button>
+    </li>
   );
 };
 
