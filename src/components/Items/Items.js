@@ -23,6 +23,7 @@ const Items = () => {
     <div className={classes["items-wrap"]}>
       {DATA.map((item) => (
         <NewItem
+          key={item.id}
           title={item.name}
           description={item.description}
           price={item.price}
