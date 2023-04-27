@@ -10,6 +10,10 @@ const CartItem = ({ id, title, price, totalPrice, amount }) => {
     dispatch(cartActions.addItem({ id, title, price, totalPrice, amount }));
   };
 
+  const removeItemHandler = () => {
+    dispatch(cartActions.removeItem(id));
+  };
+
   return (
     <div className={classes["cart-item-wrap"]}>
       <h1 className={classes.title}>{title}</h1>
@@ -17,7 +21,9 @@ const CartItem = ({ id, title, price, totalPrice, amount }) => {
       <p className={classes.price}>$ {totalPrice}</p>
       <p className={classes.amount}>{amount}x</p>
       <div className={classes["btn-box"]}>
-        <button className={classes["remove-item"]}>-</button>
+        <button className={classes["remove-item"]} onClick={removeItemHandler}>
+          -
+        </button>
         <button className={classes["add-item"]} onClick={addItemHandler}>
           +
         </button>
