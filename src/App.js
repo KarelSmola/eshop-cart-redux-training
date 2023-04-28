@@ -4,8 +4,8 @@ import { uiActions } from "./store/ui-slice";
 import Header from "./components/Header";
 import Cart from "./components/Cart/Cart";
 import Items from "./components/Items/Items";
-// import sendCartData from "./store/cart-slice";
-import { sendCartData } from "./store/cart-slice";
+import { sendCartData } from "./store/cart-actions";
+import { fetchCartData } from "./store/cart-actions";
 
 let initial = true;
 
@@ -14,6 +14,10 @@ const App = () => {
   const cartIsVisible = useSelector((state) => state.ui.cartIsVisible);
   const notification = useSelector((state) => state.ui.notification);
   const cart = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    dispatch(fetchCartData());
+  }, [dispatch]);
 
   useEffect(() => {
     if (initial) {
